@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj": {}
+    "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj": {
+    "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj",
+        "projectUniqueName": "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj",
         "projectName": "FortraxMVC",
-        "projectPath": "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj",
+        "projectPath": "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC.csproj",
         "packagesPath": "C:\\Users\\dani\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\FortraxMVC\\obj\\",
+        "outputPath": "D:\\Projects\\web\\FortraxMVC\\FortraxMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
             }
           },
           "imports": [

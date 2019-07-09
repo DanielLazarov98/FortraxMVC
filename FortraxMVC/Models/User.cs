@@ -11,8 +11,8 @@ namespace FortraxMVC.Models
         public User()
         {            
             this.Tickets = new HashSet<Ticket>();
-            this.Orders = new HashSet<Order>();
-            this.Comments = new HashSet<Comment>();
+            this.Orders = new HashSet<Order>();            
+            this.Comments = new HashSet<Comment>();            
         }      
 
         public string FullName { get; set; }              
@@ -21,7 +21,7 @@ namespace FortraxMVC.Models
 
         public ICollection<Order> Orders { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }        
         
     }
 }

@@ -38,16 +38,12 @@ namespace FortraxMVC
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-
-            //services.AddDefaultIdentity<User>()
-            //    .AddDefaultUI(UIFramework.Bootstrap4)
-            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+                    Configuration.GetConnectionString("DefaultConnection")));           
 
             services.AddMvc(options =>
                              options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()));
 
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddIdentity<User, IdentityRole>(options =>
                 {
                     options.Password.RequireUppercase = false;
                     options.Password.RequireDigit = false;
