@@ -14,6 +14,11 @@ using FortraxMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FortraxMVC.Models;
+using FortraxMVC.Services.Home;
+using FortraxMVC.Services;
+using AutoMapper;
+using AutoMapperConfiguration;
+using System.Reflection;
 
 namespace FortraxMVC
 {
@@ -27,6 +32,7 @@ namespace FortraxMVC
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -53,20 +59,26 @@ namespace FortraxMVC
                      .AddRoles<IdentityRole>()
                      .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddTransient<IProductService, ProductService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddAutoMapper(typeof(ErrorViewModel).GetTypeInfo().Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
                 if (env.IsDevelopment())
                 {
-                    dbContext.Database.EnsureCreated();
+                   
+                    dbContext.Database.Migrate();
                 }
             }
 

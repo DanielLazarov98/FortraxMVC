@@ -5,14 +5,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FortraxMVC.Models;
+using Microsoft.AspNetCore.Authorization;
+using FortraxMVC.Services.Home;
+using FortraxMVC.ViewModels;
+using AutoMapper;
 
 namespace FortraxMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IProductService productService;
+
+        private  IMapper Mapper { get; }
+
+        public HomeController(IProductService productService, IMapper mapper)
         {
-            return View();
+            this.productService = productService;
+            Mapper = mapper;
+        }
+
+        [Authorize]    
+        public IActionResult Index()
+        {      
+            var products = this.productService.GetAllProducts<HomeViewModel>();
+                            
+
+            return this.View(products);
         }
 
         public IActionResult Privacy()
