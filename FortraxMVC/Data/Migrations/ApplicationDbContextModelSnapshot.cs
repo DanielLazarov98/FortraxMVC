@@ -28,13 +28,19 @@ namespace FortraxMVC.Data.Migrations
 
                     b.Property<DateTime>("PostedOn");
 
+                    b.Property<string>("ProductDetailsViewModelId");
+
                     b.Property<string>("ProductId");
 
                     b.Property<double>("Review");
 
+                    b.Property<string>("Text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("ProductDetailsViewModelId");
 
                     b.HasIndex("ProductId");
 
@@ -111,6 +117,22 @@ namespace FortraxMVC.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("FortraxMVC.ViewModels.ProductDetailsViewModel", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("Image");
+
+                    b.Property<string>("Name");
+
+                    b.Property<decimal>("Price");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductDetailsViewModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -293,6 +315,10 @@ namespace FortraxMVC.Data.Migrations
                     b.HasOne("FortraxMVC.Models.User", "Author")
                         .WithMany("Comments")
                         .HasForeignKey("AuthorId");
+
+                    b.HasOne("FortraxMVC.ViewModels.ProductDetailsViewModel")
+                        .WithMany("Comments")
+                        .HasForeignKey("ProductDetailsViewModelId");
 
                     b.HasOne("FortraxMVC.Models.Product", "Product")
                         .WithMany("Comments")

@@ -16,15 +16,15 @@ namespace FortraxMVC.Controllers
     {
         private readonly IProductService productService;
 
-        private  IMapper Mapper { get; }
+        
 
-        public HomeController(IProductService productService, IMapper mapper)
+        public HomeController(IProductService productService)
         {
             this.productService = productService;
-            Mapper = mapper;
+           
         }
 
-        [Authorize]    
+           
         public IActionResult Index()
         {      
             var products = this.productService.GetAllProducts<HomeViewModel>();

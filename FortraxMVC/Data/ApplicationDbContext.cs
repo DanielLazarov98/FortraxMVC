@@ -4,6 +4,7 @@ using System.Text;
 using FortraxMVC.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using FortraxMVC.ViewModels;
 
 namespace FortraxMVC.Data
 {
@@ -55,5 +56,7 @@ namespace FortraxMVC.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<FortraxMVC.ViewModels.ProductDetailsViewModel> ProductDetailsViewModel { get; set; }
     }
 }
