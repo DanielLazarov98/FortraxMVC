@@ -13,7 +13,7 @@ namespace FortraxMVC.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Lottery> Lotteries { get; set; }
+        public DbSet<Lottery> Lottery { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
@@ -58,5 +58,9 @@ namespace FortraxMVC.Data
         }
 
         public DbSet<FortraxMVC.ViewModels.ProductDetailsViewModel> ProductDetailsViewModel { get; set; }
+
+        public DbSet<FortraxMVC.ViewModels.LotteryWinnerViewModel> LotteryWinnerViewModel { get; set; }
+
+        public DbSet<FortraxMVC.ViewModels.OrderViewModel> OrderViewModel { get; set; }
     }
 }

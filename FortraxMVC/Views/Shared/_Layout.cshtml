@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">    
     <title>@ViewData["Title"] - Fortrax</title>
+    
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/product/">
 
@@ -43,7 +44,7 @@
             </a>
             <a class="py-2 d-none d-md-inline-block" href="#">Products</a>
             <a class="py-2 d-none d-md-inline-block" href="#">Lottery</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Orders</a>
+            <a class="py-2 d-none d-md-inline-block" href=@Url.Action("Details","Orders">Orders</a>
             <partial name="_LoginPartial"/>         
         </div>
     </nav>

@@ -60,6 +60,8 @@ namespace FortraxMVC
                      .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ILotteryService, LotteryService>();
+            services.AddTransient<IOrderService, OrderService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

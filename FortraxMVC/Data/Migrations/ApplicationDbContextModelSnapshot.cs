@@ -56,7 +56,7 @@ namespace FortraxMVC.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Lotteries");
+                    b.ToTable("Lottery");
                 });
 
             modelBuilder.Entity("FortraxMVC.Models.Order", b =>
@@ -117,6 +117,24 @@ namespace FortraxMVC.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("FortraxMVC.ViewModels.LotteryWinnerViewModel", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("WinnerId");
+
+                    b.Property<string>("WinningTicketId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WinnerId");
+
+                    b.HasIndex("WinningTicketId");
+
+                    b.ToTable("LotteryWinnerViewModel");
                 });
 
             modelBuilder.Entity("FortraxMVC.ViewModels.ProductDetailsViewModel", b =>
@@ -345,6 +363,17 @@ namespace FortraxMVC.Data.Migrations
                     b.HasOne("FortraxMVC.Models.User", "User")
                         .WithMany("Tickets")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("FortraxMVC.ViewModels.LotteryWinnerViewModel", b =>
+                {
+                    b.HasOne("FortraxMVC.Models.User", "Winner")
+                        .WithMany()
+                        .HasForeignKey("WinnerId");
+
+                    b.HasOne("FortraxMVC.Models.Ticket", "WinningTicket")
+                        .WithMany()
+                        .HasForeignKey("WinningTicketId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

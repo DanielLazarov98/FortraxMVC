@@ -68,3 +68,6 @@ D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Identi
 D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Views\Products\Details.g.cshtml.cs
+D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Views\Lottery\Index.g.cshtml.cs
+D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Views\Orders\Create.g.cshtml.cs
+D:\Projects\web\FortraxMVC\FortraxMVC\obj\Debug\netcoreapp2.2\Razor\Views\Orders\Details.g.cshtml.cs
