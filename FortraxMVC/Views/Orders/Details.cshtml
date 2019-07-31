@@ -1,0 +1,19 @@
+﻿@model List<FortraxMVC.ViewModels.OrderViewModel>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+@foreach (var order in Model)
+{
+<div>
+    <h3>@order.ProductName</h3>
+    <h3>@order.Quantity</h3>
+    <h3>@order.IssuedOn</h3>
+</div>
+
+}
+
