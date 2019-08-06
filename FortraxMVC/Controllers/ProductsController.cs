@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using FortraxMVC.Data;
 using FortraxMVC.ViewModels;
 using FortraxMVC.Services.Home;
+using FortraxMVC.Models.Enums;
 
 namespace FortraxMVC.Controllers
 {
@@ -37,6 +38,20 @@ namespace FortraxMVC.Controllers
             }
 
             return View(product);
-        }        
+        }  
+        
+        public IActionResult Create(string name, ProductType type, decimal price,int quantity, byte[] image )
+        {
+            this.productService.CreateProduct(name, type, price, quantity, image);
+
+            return View();
+        }
+
+        public IActionResult AddStock(string id, int quantity)
+        {
+            this.productService.AddProductQuantity(id, quantity);
+
+            return Redirect("Home/Index");
+        }
     }
 }

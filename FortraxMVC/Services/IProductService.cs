@@ -1,4 +1,5 @@
 ﻿using FortraxMVC.Models;
+using FortraxMVC.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,11 @@ namespace FortraxMVC.Services.Home
     {
         IEnumerable<TViewModel> GetAllProducts<TViewModel>();
         TViewModel  GetProductDetails<TViewModel>(string id);
+
+        void CreateProduct(string name, ProductType type, decimal price, int quantity, byte[] image);
+       
+
+        void AddProductQuantity(string productId, int quantity);
+       
     }
 }
