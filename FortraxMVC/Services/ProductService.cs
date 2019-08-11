@@ -39,7 +39,7 @@ namespace FortraxMVC.Services
                             
         }
 
-        public void CreateProduct(string name, ProductType type, decimal price, int quantity, byte[] image)
+        public void CreateProduct(string name, ProductType type, decimal price, int quantity, string image)
         {
             db.Products.Add(new Product
             {

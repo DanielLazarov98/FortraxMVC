@@ -24,7 +24,7 @@ namespace FortraxMVC.Models
 
         public int InStock { get; set; }
 
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
 

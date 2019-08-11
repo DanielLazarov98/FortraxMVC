@@ -40,7 +40,7 @@ namespace FortraxMVC.Controllers
             return View(product);
         }  
         
-        public IActionResult Create(string name, ProductType type, decimal price,int quantity, byte[] image )
+        public IActionResult Create(string name, ProductType type, decimal price,int quantity, string image )
         {
             this.productService.CreateProduct(name, type, price, quantity, image);
 

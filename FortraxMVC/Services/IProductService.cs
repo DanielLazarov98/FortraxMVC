@@ -12,7 +12,7 @@ namespace FortraxMVC.Services.Home
         IEnumerable<TViewModel> GetAllProducts<TViewModel>();
         TViewModel  GetProductDetails<TViewModel>(string id);
 
-        void CreateProduct(string name, ProductType type, decimal price, int quantity, byte[] image);
+        void CreateProduct(string name, ProductType type, decimal price, int quantity, string image);
        
 
         void AddProductQuantity(string productId, int quantity);
