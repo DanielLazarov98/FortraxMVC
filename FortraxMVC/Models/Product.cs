@@ -18,7 +18,7 @@ namespace FortraxMVC.Models
 
         public string Name { get; set; }
 
-        public ProductType Type { get; set; }
+        public ProductType ProductType { get; set; }
 
         public decimal Price { get; set; }
 
